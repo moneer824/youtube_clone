@@ -4,11 +4,18 @@
 
 // console.log(fetch("https://youtube.googleapis.com/youtube/v3/search?q=csk&type=video&key=AIzaSyASUn9QEM6YQew1RGw_z3N8Ip5f_o0q6Fg"))
 
+
+
+// https://youtube.googleapis.com/youtube/v3/search?maxResults=20&q=flag&type=video&videoEmbeddable=true&key=
+
+
+
+
 let parent = document.getElementById("parent")
 
 async function searchVideos() {
     let inp = document.getElementById("search").value
-    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${inp}&type=video&key=AIzaSyASUn9QEM6YQew1RGw_z3N8Ip5f_o0q6Fg&maxResults=20`)
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${inp}&maxResults=20&type=video&videoEmbeddable=true&key=AIzaSyASUn9QEM6YQew1RGw_z3N8Ip5f_o0q6Fg`)
 
     let data = await res.json()
     console.log(data.items)
